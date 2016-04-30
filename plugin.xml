@@ -10,9 +10,9 @@
     <keywords>audio,stream,radio</keywords>
     <repo>git@git.wnyc.net:mobile/cordova/cordova-plugin-playerhater.git</repo>
 
-    <js-module src="www/audioplayer.js" name="AudioPlayer"> 
-      <clobbers target="audioplayer"/> 
-    </js-module> 
+    <js-module src="www/audioplayer.js" name="AudioPlayer">
+      <clobbers target="audioplayer"/>
+    </js-module>
 
     <!-- android -->
     <platform name="android">
@@ -30,7 +30,7 @@
           <uses-permission android:name="android.permission.BROADCAST_STICKY" />
 
         </config-file>
-       
+
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
           <service android:name="org.prx.playerhater.PlaybackService">
             <meta-data android:name="org.prx.playerhater.Config" android:resource="@xml/playerhater"></meta-data>
@@ -41,17 +41,17 @@
             </intent-filter>
           </receiver>
         </config-file>
- 
+
 	<source-file src="res/android/layout-v11/nypr_ph_hc_notification.xml" target-dir="res/layout-v11" />
         <source-file src="src/android/org/nypr/cordova/playerhaterplugin" target-dir="src/org/nypr/cordova" />
         <source-file src="src/android/org/prx/playerhater" target-dir="src/org/prx" />
         <resource-file src="res/android/" target="res" />
 
         <source-file src="lib/android/aacdecoder-android-0.8.jar" target-dir="libs" />
-        <source-file src="lib/android/mips" target-dir="libs" />
-        <source-file src="lib/android/x86" target-dir="libs" />
-        <source-file src="lib/android/armeabi" target-dir="libs" />
-        <source-file src="lib/android/armeabi-v7a" target-dir="libs" />
+        <source-file src="lib/android/mips/libaacdecoder.so" target-dir="libs/mips" />
+        <source-file src="lib/android/x86/libaacdecoder.so" target-dir="libs/x86" />
+        <source-file src="lib/android/armeabi/libaacdecoder.so" target-dir="libs/armeabi" />
+        <source-file src="lib/android/armeabi-v7a/libaacdecoder.so" target-dir="libs/armeabi-v7a" />
 
     </platform>
 
